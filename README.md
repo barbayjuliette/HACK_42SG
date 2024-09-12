@@ -1,6 +1,5 @@
 # How to start
 
-
 ## Clone
 
 ## Create a virtual environment
@@ -13,6 +12,7 @@ You should now see a folder .venv. This is your virtual environment.
 
 ## Start your virtual environment
 
+Make sure you are in the folder that contains your venv folder.
 ```
 source .venv/bin/activate
 ```
@@ -42,6 +42,7 @@ python manage.py migrate
 cd hack
 python3 manage.py runserver
 ```
+This should be done in the folder that contains the manage.py
 
 ## Check localhost
 
@@ -65,3 +66,5 @@ When new dependencies have been pushed, you need to update your virtual environm
 ```dotnetcli
 pip install -r requirements.txt
 ```
+## ADD NEW APPS!
+The project is hack, and you should add new apps to the project instead of putting everything your code directly inside of hack.
