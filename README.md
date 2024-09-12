@@ -39,12 +39,13 @@ python manage.py migrate
 ## Run server
 
 ```dotnetcli
+cd hack
 python3 manage.py runserver
 ```
 
 ## Check localhost
 
-You can now check out your web app on:
+You can now check out your web app at:
 http://localhost:8000/
 
 
