@@ -32,6 +32,7 @@ pip install -r requirements.txt
 
 ## Run migrations
 ```
+cd hack
 python manage.py makemigrations
 python manage.py migrate
 ```
@@ -39,7 +40,6 @@ python manage.py migrate
 ## Run server
 
 ```dotnetcli
-cd hack
 python3 manage.py runserver
 ```
 This should be done in the folder that contains the manage.py
