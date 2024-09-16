@@ -1,0 +1,291 @@
+.foodpanda-logo-horizontal {
+  	position: absolute;
+  	top: 21px;
+  	left: 5.25px;
+  	width: 262.5px;
+  	height: 43.6px;
+  	object-fit: cover;
+}
+.foodpanda-logo-horizontal-padd {
+  	width: 273px;
+  	position: relative;
+  	height: 85.6px;
+}
+.title {
+  	position: relative;
+  	line-height: 100%;
+}
+.navigation-pill-list {
+  	flex: 1;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-end;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	gap: 8px;
+}
+.navigation-pill-list a {
+	display: block;
+	border-radius: 8px;
+	/* background-color: #f5f5f5; */
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 20px;
+	font-size: 18px;
+	text-decoration: none;
+}
+.default {
+  	position: relative;
+}
+.button-secondary {
+  	border-radius: 10px;
+  	background-color: var(--background-color);
+  	border: 1px solid var(--primary-color);
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 14px 36px;
+}
+.button-primary {
+  	border-radius: 10px;
+  	background-color: var(--primary-color);
+  	border: 1px solid var(--background-color);
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 14px 36px;
+  	color: #fff;
+}
+.header-auth {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 12px;
+  	text-align: center;
+  	font-size: 18px;
+  	color: var(--primary-color);
+  	font-family: 'Montserrat', sans-serif;
+}
+.header {
+  	width: 100%;
+  	background-color: var(--background-color);
+  	border-bottom: 1px solid var(--border-color);
+  	box-sizing: border-box;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	padding: 32px;
+  	gap: 0px 32px;
+}
+.subtitle {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 32px;
+  	line-height: 120%;
+  	font-family: 'Montserrat', sans-serif;
+}
+.text-content-title {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 8px;
+}
+.hero-image {
+  	align-self: stretch;
+  	background-color: var(--primary-color);
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 160px 24px;
+  	text-align: center;
+  	font-size: 56px;
+  	color: #e5e5e5;
+  	font-family: 'Montserrat', sans-serif;
+}
+/* .image-icon {
+  	align-self: stretch;
+  	flex: 1;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+  	object-fit: cover;
+} */
+.panel-image-double {
+  	align-self: stretch;
+  	background-color: var(--background-color);
+  	height: 478px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 64px;
+  	box-sizing: border-box;
+  	gap: 48px;
+  	opacity: 0.8;
+}
+.heading {
+  	align-self: stretch;
+  	position: relative;
+  	line-height: 34px;
+}
+.subheading {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 18px;
+  	line-height: 30px;
+  	color: #757575;
+}
+.text-content-heading {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	gap: 8px;
+}
+.info-icon {
+  	width: 32px;
+  	position: relative;
+  	height: 32px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+}
+.body-text-for {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 16px;
+  	line-height: 28px;
+  	color: #757575;
+}
+.text {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 8px;
+}
+.body {
+  	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	min-width: 160px;
+}
+.card {
+  	width: 301.3px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: center;
+  	flex-wrap: wrap;
+  	align-content: flex-start;
+  	gap: 24px;
+  	min-width: 240px;
+}
+.cards {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	gap: 64px;
+  	font-family: 'Montserrat', sans-serif;
+}
+.card-grid-icon {
+  	align-self: stretch;
+  	background-color: var(--background-color);
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 64px;
+  	gap: 48px;
+  	font-size: 24px;
+}
+.icon {
+  	width: 23.3px;
+  	position: relative;
+  	height: 35px;
+}
+/* .figma {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+}
+.x-logo-icon {
+  	width: 24px;
+  	position: relative;
+  	height: 24px;
+}
+.logo-instagram-icon {
+  	width: 24px;
+  	position: relative;
+  	height: 24px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+} */
+.social-icons {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 16px;
+}
+.footer-link-list {
+  	width: 262px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 12px;
+}
+.footer-link-list ul {
+	list-style-type: none;
+}
+.footer {
+  	width: 100%;
+  	background-color: #000;
+  	border-top: 1px solid #d9d9d9;
+  	box-sizing: border-box;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-evenly;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	padding: 32px 32px 160px;
+  	gap: 16px;
+	line-height: 2.5;
+	font-size: 16px;
+  	color: #e5e5e5;
+}
+.sample {
+  	width: 100%;
+  	position: relative;
+  	background-color: var(--background-color);
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	text-align: left;
+  	font-size: 16px;
+  	color: #1e1e1e;
+  	font-family: 'Montserrat', sans-serif;
+}

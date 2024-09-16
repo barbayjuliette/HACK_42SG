@@ -10,16 +10,96 @@
 		{% endblock %}
 	</title>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
 	<script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
 	<nav>
-		<a href="/">Home</a> |
-		<a href="/about">About</a> |
+		<div class="header">
+			<div class="foodpanda-logo-horizontal-padd">
+				  <img class="foodpanda-logo-horizontal" alt="" src="{% static 'assets/foodpanda_logo_horizontal.png' %}">
+			</div>
+			<div class="navigation-pill-list">
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+				<a href="/test">Test</a>
+				  <!-- <div class="navigation-pill">
+					<a href></a>
+						<div class="title">Pricing</div>
+				  </div>
+				  <div class="navigation-pill1">
+						<div class="title">Solutions</div>
+				  </div>
+				  <div class="navigation-pill1">
+						<div class="title">Community</div>
+				  </div>
+				  <div class="navigation-pill1">
+						<div class="title">Resources</div>
+				  </div>
+				  <div class="navigation-pill1">
+						<div class="title">Contact</div>
+				  </div> -->
+			</div>
+			<div class="header-auth">
+				  <div class="button-secondary">
+						<b class="default">Login</b>
+				  </div>
+				  <div class="button-primary">
+						<b class="default">Register</b>
+				  </div>
+			</div>
+	  </div>
 	</nav>
 	<main>
 		{% block content %}
 		{% endblock %}
 	</main>
+	<div class="footer">
+		<div class="logo-section">
+			<img class="icon" alt="Figma logo" src="{% static 'assets/Figma.svg' %}">
+			<div class="social-icons">
+				<img alt="X logo" src="{% static 'assets/X_Logo.svg' %}">
+				<img alt="Instagram logo" src="{% static 'assets/Logo_Instagram.svg' %}">
+				<img alt="YouTube logo" src="{% static 'assets/Logo_YouTube.svg' %}">
+				<img alt="LinkedIn logo" src="{% static 'assets/LinkedIn.svg' %}">
+			</div>
+		</div>
+		<div class="footer-link-list">
+			<h3>Use cases</h3>
+			<ul>
+				<li>UI design</li>
+				<li>UX design</li>
+				<li>Wireframing</li>
+				<li>Diagramming</li>
+				<li>Brainstorming</li>
+				<li>Online whiteboard</li>
+				<li>Team collaboration</li>
+			</ul>
+		</div>
+		<div class="footer-link-list">
+			<h3>Explore</h3>
+			<ul>
+				<li>Design</li>
+				<li>Prototyping</li>
+				<li>Development features</li>
+				<li>Design systems</li>
+				<li>Collaboration features</li>
+				<li>Design process</li>
+				<li>FigJam</li>
+			</ul>
+		</div>
+		<div class="footer-link-list">
+			<h3>Resources</h3>
+			<ul>
+				<li>Blog</li>
+				<li>Best practices</li>
+				<li>Colors</li>
+				<li>Color wheel</li>
+				<li>Support</li>
+				<li>Developers</li>
+				<li>Resource library</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
