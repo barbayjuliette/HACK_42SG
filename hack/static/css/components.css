@@ -1,0 +1,109 @@
+/*--------------------------------------------------------------*/
+/* ICONS */
+/*--------------------------------------------------------------*/
+
+.material-icons.primary {
+	color: var(--primary-dark);
+}
+
+/*--------------------------------------------------------------*/
+/* NAVIGATION BAR */
+/*--------------------------------------------------------------*/
+
+/* Default display */
+.topnav {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 8px;
+	overflow: hidden;
+	font-size: 18px;
+}
+.topnav a {
+	display: block;
+	border-radius: 8px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	color: var(--primary-dark);
+	text-decoration: none;
+	transition: 0.3s;
+}
+.topnav a:hover {
+	color: var(--primary-light);
+}
+/* Hide topnav menu icon by default */
+.topnav a.icon {
+	display: none;
+}
+
+/* Responsive display for smaller screens */
+@media screen and (max-width:1000px) {
+    #topnavLinks {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+		gap: 24px;
+        background-color: var(--background-color);
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+    #topnavLinks.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+	.topnav a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+	.topnav a.icon {
+		display: block;
+	}
+}
+
+/*--------------------------------------------------------------*/
+/* BUTTONS */
+/*--------------------------------------------------------------*/
+
+.button {
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 14px 36px;
+	position: relative;
+	transition: 0.3s;
+}
+.button-primary {
+	background-color: var(--primary-color);
+	border: 1px solid var(--background-color);
+	color: #fff;
+}
+.button-primary:hover {
+    background-color: var(--primary-light);
+}
+.button-secondary {
+	background-color: var(--background-color);
+	border: 1px solid var(--primary-color);
+	color: var(--primary-color);
+}
+.button-secondary:hover {
+	background-color: var(--primary-light);
+	border: 1px solid var(--primary-light);
+	color: #fff;
+}

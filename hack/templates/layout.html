@@ -10,7 +10,9 @@
 		{% endblock %}
 	</title>
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/components.css' %}">
 	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
@@ -19,35 +21,30 @@
 			<div class="foodpanda-logo-horizontal-padd">
 				  <img class="foodpanda-logo-horizontal" alt="" src="{% static 'assets/foodpanda_logo_horizontal.png' %}">
 			</div>
-			<div class="navigation-pill-list">
-				<a href="/">Home</a>
-				<a href="/about">About</a>
-				<a href="/test">Test</a>
-				  <!-- <div class="navigation-pill">
-					<a href></a>
-						<div class="title">Pricing</div>
-				  </div>
-				  <div class="navigation-pill1">
-						<div class="title">Solutions</div>
-				  </div>
-				  <div class="navigation-pill1">
-						<div class="title">Community</div>
-				  </div>
-				  <div class="navigation-pill1">
-						<div class="title">Resources</div>
-				  </div>
-				  <div class="navigation-pill1">
-						<div class="title">Contact</div>
-				  </div> -->
+			<div class="topnav">
+				<div class="topnav" id="topnavLinks">
+					<a href="/"><b>Home</b></a>
+					<a href="/about"><b>About</b></a>
+					<a href="/test"><b>Test</b></a>
+					<div class="button button-secondary">
+						<b>Login</b>
+					</div>
+					<div class="button button-primary">
+							<b>Register</b>
+					</div>
+				</div>
+				<a href="javascript:void(0);" class="icon" id="menuIcon">
+					<span class="material-icons primary">menu</span>
+				</a>
 			</div>
-			<div class="header-auth">
-				  <div class="button-secondary">
-						<b class="default">Login</b>
+			<!-- <div class="header-auth">
+				  <div class="button button-secondary">
+						<b>Login</b>
 				  </div>
-				  <div class="button-primary">
-						<b class="default">Register</b>
+				  <div class="button button-primary">
+						<b>Register</b>
 				  </div>
-			</div>
+			</div> -->
 	  </div>
 	</nav>
 	<main>

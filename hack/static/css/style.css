@@ -1,3 +1,7 @@
+/*--------------------------------------------------------------*/
+/* GENERAL STYLING */
+/*--------------------------------------------------------------*/
+
 :root {
 	/* Define base colours in light mode */
 	--background-color: #ffffff;
@@ -5,6 +9,8 @@
 	--primary-color: #ff2b85;
 	--secondary-color: #f5f5f5;
 	--border-color: #d9d9d9;
+	--primary-dark: #A11350;
+	--primary-light: #FFACCF;
 }
 
 .dark-mode {
@@ -14,7 +20,7 @@
 	--primary-color: #ff4b9e;
 	--secondary-color: #2a2a2a;
 	--border-color: #444444;
-  }
+}
 
 body {
 	font-size: 3rem;
