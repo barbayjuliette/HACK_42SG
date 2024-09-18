@@ -16,17 +16,6 @@
   	line-height: 100%;
 }
 
-.header-auth {
-  	display: flex;
-  	flex-direction: row;
-  	align-items: center;
-  	justify-content: flex-start;
-  	gap: 12px;
-  	text-align: center;
-  	font-size: 18px;
-  	color: var(--primary-color);
-  	font-family: 'Montserrat', sans-serif;
-}
 .header {
   	width: 100%;
   	background-color: var(--background-color);
@@ -69,14 +58,7 @@
   	color: #e5e5e5;
   	font-family: 'Montserrat', sans-serif;
 }
-/* .image-icon {
-  	align-self: stretch;
-  	flex: 1;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-  	object-fit: cover;
-} */
+
 .panel-image-double {
   	align-self: stretch;
   	background-color: var(--background-color);
@@ -215,7 +197,7 @@
 }
 .footer {
   	width: 100%;
-  	background-color: #000;
+  	background-color: #262626;
   	border-top: 1px solid #d9d9d9;
   	box-sizing: border-box;
   	overflow: hidden;

@@ -3,11 +3,11 @@
 /*--------------------------------------------------------------*/
 
 .material-icons.primary {
-	color: var(--primary-dark);
+	color: var(--text-color);
 }
 
 .material-icons.primary:active {
-	color: var(--primary-color);
+	color: var(--primary-dark);
 }
 
 /*--------------------------------------------------------------*/
@@ -34,31 +34,31 @@
 	align-items: center;
 	justify-content: center;
 	padding: 20px;
-	color: var(--primary-dark);
+	color: var(--link-color);
 	text-decoration: none;
 	transition: 0.3s;
 }
 .topnav a:hover {
-	background-color: #f7f7f7;
+	background-color: var(--hover-color);
 	color: var(--primary-light);
 }
 /* Hide topnav menu icon by default */
-.topnav a.icon {
+.topnav a #menuIcon {
 	display: none;
 }
 
+/*--------------------------------------------------------------*/
+/* DROPDOWN NAVIGATION MENU FOR SMALLER SCREENS */
+/*--------------------------------------------------------------*/
+
 /* Responsive display for smaller screens */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+    /* Initial state for the menu: hidden without transition */
     #topnavLinks {
-        display: none; /* Initially hidden */
+		display: flex;
+		flex-direction: column;
         opacity: 0;
         visibility: hidden;
-        transition: none;
-    }
-
-    #topnavLinks.show {
-        display: flex;  /* Show when 'show' class is active */
-        flex-direction: column;
         position: absolute;
         top: 40px;
         left: 0;
@@ -67,24 +67,27 @@
         background-color: var(--background-color);
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transform: translateY(-10px);
+        transition: none;
+    }
+    /* Show state: only applies transition when the 'show' class is added */
+    #topnavLinks.show {
         opacity: 1;
         visibility: visible;
-        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
         transform: translateY(0);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
-
-    #topnavLinks.show:not(.show) {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-    }
-
+	/* Only fade out when the 'hide' class is added */
+	#topnavLinks.hide {
+		opacity: 0;
+		transform: translateY(-10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+	}
     .topnav a {
         float: none;
         display: block;
         text-align: left;
     }
-
     .topnav a.icon {
         display: block;
     }
@@ -105,7 +108,7 @@
 	transition: 0.3s;
 }
 .button-primary {
-	background-color: var(--primary-color);
+	background-color: var(--button-color);
 	border: 1px solid var(--background-color);
 	color: #fff;
 }
@@ -114,8 +117,8 @@
 }
 .button-secondary {
 	background-color: var(--background-color);
-	border: 1px solid var(--primary-color);
-	color: var(--primary-color);
+	border: 1px solid var(--button-color);
+	color: var(--button-color);
 }
 .button-secondary:hover {
 	background-color: var(--primary-light);
