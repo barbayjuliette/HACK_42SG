@@ -6,6 +6,10 @@
 	color: var(--primary-dark);
 }
 
+.material-icons.primary:active {
+	color: var(--primary-color);
+}
+
 /*--------------------------------------------------------------*/
 /* NAVIGATION BAR */
 /*--------------------------------------------------------------*/
@@ -35,6 +39,7 @@
 	transition: 0.3s;
 }
 .topnav a:hover {
+	background-color: #f7f7f7;
 	color: var(--primary-light);
 }
 /* Hide topnav menu icon by default */
@@ -43,36 +48,46 @@
 }
 
 /* Responsive display for smaller screens */
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
     #topnavLinks {
-        display: flex;
+        display: none; /* Initially hidden */
+        opacity: 0;
+        visibility: hidden;
+        transition: none;
+    }
+
+    #topnavLinks.show {
+        display: flex;  /* Show when 'show' class is active */
         flex-direction: column;
         position: absolute;
         top: 40px;
         left: 0;
         right: 0;
-		gap: 24px;
+        gap: 24px;
         background-color: var(--background-color);
         padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        transform: translateY(0);
+    }
+
+    #topnavLinks.show:not(.show) {
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
-        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
-    #topnavLinks.show {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+
+    .topnav a {
+        float: none;
+        display: block;
+        text-align: left;
     }
-	.topnav a {
-		float: none;
-		display: block;
-		text-align: left;
-	}
-	.topnav a.icon {
-		display: block;
-	}
+
+    .topnav a.icon {
+        display: block;
+    }
 }
 
 /*--------------------------------------------------------------*/

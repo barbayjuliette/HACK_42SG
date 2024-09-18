@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function()
 	const topnavLinks = document.getElementById('topnavLinks');
 	const menuIcon = document.getElementById('menuIcon');
 
-	menuIcon.addEventListener('click', function()
+	menuIcon.addEventListener('click', function(event)
 	{
 		event.stopPropagation();
-		topnavLinks.classList.toggle('show');
+		if (window.innerWidth <= 1000)
+			topnavLinks.classList.toggle('show');
 	});
 
 	// Close the menu when clicking outside
