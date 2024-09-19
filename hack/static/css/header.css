@@ -27,8 +27,8 @@
 	transition: 0.3s;
 }
 .topnav a:hover {
-	background-color: var(--hover-color);
-	color: var(--primary-light);
+	background-color: var(--hover-block-color);
+	color: var(--link-hover-color);
 }
 /* Hide topnav menu icon by default */
 #menuIcon {

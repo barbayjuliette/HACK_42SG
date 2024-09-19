@@ -10,6 +10,12 @@
 	color: var(--primary-dark);
 }
 
+.icon {
+	width: 23.3px;
+	position: relative;
+	height: 35px;
+}
+
 /*--------------------------------------------------------------*/
 /* BUTTONS */
 /*--------------------------------------------------------------*/
@@ -30,7 +36,7 @@
 	color: #fff;
 }
 .button-primary:hover {
-    background-color: var(--primary-light);
+    background-color: var(--button-hover);
 }
 .button-secondary {
 	background-color: var(--background-color);
@@ -38,7 +44,88 @@
 	color: var(--button-color);
 }
 .button-secondary:hover {
-	background-color: var(--primary-light);
-	border: 1px solid var(--primary-light);
+	background-color: var(--button-hover);
+	border: 1px solid var(--button-hover);
 	color: #fff;
+}
+
+/*--------------------------------------------------------------*/
+/* CARDS */
+/*--------------------------------------------------------------*/
+
+.text-content-heading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+.info-icon {
+	width: 32px;
+	position: relative;
+	height: 32px;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.body-text-for {
+	align-self: stretch;
+	position: relative;
+	font-size: 16px;
+	line-height: 28px;
+	color: #757575;
+}
+.text {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 8px;
+}
+.body {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	min-width: 160px;
+}
+.card {
+	width: 301.3px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	gap: 24px;
+	min-width: 240px;
+}
+.cards {
+	align-self: stretch;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	gap: 64px;
+	font-family: 'Montserrat', sans-serif;
+}
+.card-grid-icon {
+	align-self: stretch;
+	background-color: var(--background-color);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 64px;
+	gap: 48px;
+	font-size: 24px;
+}
+.card-title {
+	align-self: stretch;
+	position: relative;
+	font-size: 24px;
+	line-height: 34px;
 }

@@ -9,7 +9,7 @@
 <div class="hero-image">
 	<div class="text-content-title">
 			<h2>Title</h2>
-			<div class="subtitle">Subtitle</div>
+			<h3>Subtitle</h3>
 	</div>
 </div>
 	{% comment %}
@@ -20,72 +20,24 @@
 		
 	</div>
 	{% endcomment %}
-<div class="card-grid-icon">
+<div class="body-content">
 	<div class="text-content-heading">
-			<b class="heading">Heading</b>
-			<div class="subheading">Subheading</div>
+			<h2>Heading</h2>
+			<h3 class="subheading">Subheading</h3>
 	</div>
 	<div class="cards">
-			<div class="card">
-				<img class="info-icon" alt="" src="{% static 'assets/Info.svg' %}">
-				
-				<div class="body">
-						<div class="text">
-							<b class="heading">Title</b>
-							<div class="body-text-for">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
-						</div>
-				</div>
+		{% for i in '123456'|make_list %}
+		<div class="card">
+			<img class="info-icon" alt="" src="{% static 'assets/Info.svg' %}">
+			
+			<div class="body">
+					<div class="text">
+						<b class="card-title">Title</b>
+						<div class="body-text-for">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
+					</div>
 			</div>
-			<div class="card">
-				<img class="info-icon" alt="" src="{% static 'assets/Info.svg' %}">
-				
-				<div class="body">
-						<div class="text">
-							<b class="heading">Title</b>
-							<div class="body-text-for">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
-						</div>
-				</div>
-			</div>
-			<div class="card">
-				<img class="info-icon" alt="" src="{% static 'assets/Info.svg' %}">
-				
-				<div class="body">
-						<div class="text">
-							<b class="heading">Title</b>
-							<div class="body-text-for">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
-						</div>
-				</div>
-			</div>
-			<div class="card">
-				<img class="info-icon" alt="" src="{% static 'assets/Info.svg' %}">
-				
-				<div class="body">
-						<div class="text">
-							<b class="heading">Title</b>
-							<div class="body-text-for">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
-						</div>
-				</div>
-			</div>
-			<div class="card">
-				<img class="info-icon" alt="" src="{% static 'assets/Info.svg' %}">
-				
-				<div class="body">
-						<div class="text">
-							<b class="heading">Title</b>
-							<div class="body-text-for">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
-						</div>
-				</div>
-			</div>
-			<div class="card">
-				<img class="info-icon" alt="" src="{% static 'assets/Info.svg' %}">
-				
-				<div class="body">
-						<div class="text">
-							<b class="heading">Title</b>
-							<div class="body-text-for">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
-						</div>
-				</div>
-			</div>
+		</div>
+		{% endfor %}
 	</div>
 </div>
 
