@@ -11,33 +11,17 @@
   	position: relative;
   	height: 85.6px;
 }
-.title {
+/* .title {
   	position: relative;
   	line-height: 100%;
-}
-
-.header {
-  	width: 100%;
-  	background-color: var(--background-color);
-  	border-bottom: 1px solid var(--border-color);
-  	box-sizing: border-box;
-  	overflow: hidden;
-  	display: flex;
-  	flex-direction: row;
-  	align-items: center;
-  	justify-content: flex-start;
-  	flex-wrap: wrap;
-  	align-content: center;
-  	padding: 32px;
-  	gap: 0px 32px;
-}
-.subtitle {
+} */
+/* .subtitle {
   	align-self: stretch;
   	position: relative;
   	font-size: 32px;
   	line-height: 120%;
   	font-family: 'Montserrat', sans-serif;
-}
+} */
 .text-content-title {
   	display: flex;
   	flex-direction: column;

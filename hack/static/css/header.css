@@ -1,4 +1,24 @@
 /*--------------------------------------------------------------*/
+/* HEADER */
+/*--------------------------------------------------------------*/
+
+.header {
+	width: 100%;
+	background-color: var(--background-color);
+	border-bottom: 1px solid var(--border-color);
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-content: center;
+	padding: 32px;
+	gap: 0px 32px;
+}
+
+/*--------------------------------------------------------------*/
 /* NAVIGATION BAR */
 /*--------------------------------------------------------------*/
 
@@ -22,13 +42,10 @@
 	align-items: center;
 	justify-content: center;
 	padding: 20px;
-	color: var(--link-color);
-	text-decoration: none;
 	transition: 0.3s;
 }
 .topnav a:hover {
 	background-color: var(--hover-block-color);
-	color: var(--link-hover-color);
 }
 /* Hide topnav menu icon by default */
 #menuIcon {
