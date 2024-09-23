@@ -1,0 +1,10 @@
+fqdn==1.5.1
+Geohash==1.0
+geohash2==1.1
+isoduration==20.11.0
+jsonpointer==3.0.0
+jupyter==1.1.1
+keplergl==0.3.2
+matplotlib==3.9.2
+pipdeptree==2.23.4
+webcolors==24.8.0
