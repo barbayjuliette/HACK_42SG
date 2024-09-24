@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils";
 import { FC } from "react";
+import Link from "next/link";
 
 interface NavbarItemProps {
   icon: JSX.Element;
   title: string;
+  href: string;
   selected?: boolean;
 }
 
@@ -12,17 +14,12 @@ interface NavbarProps {
 }
 
 const NavbarItem: FC<NavbarItemProps> = (props) => {
-  const { icon, title, selected } = props;
+  const { icon, title, href, selected } = props;
   return (
-    <div
-      className={cn(
-        "flex flex-col gap-2 items-center justify-center",
-        selected ? "text-panda" : "text-muted-foreground"
-      )}
-    >
+    <Link href={href} className="flex flex-col gap-2 items-center justify-center">
       {icon}
-      <p className="font-semibold text-sm">{title}</p>
-    </div>
+      <p className={cn("font-semibold text-sm", selected ? "text-panda" : "text-muted-foreground")}>{title}</p>
+    </Link>
   );
 };
 

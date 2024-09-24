@@ -37,7 +37,7 @@ export default function TrackPage() {
           <p className="text-2xl">+1337</p>
           <Image src="/cactus.png" height={32} width={32} alt="Cactus image" />
         </div>
-        <Link href="/">
+        <Link href="/order/leaderboard">
           <Button className="bg-panda text-white text-lg my-8 p-6 rounded-xl w-[248px] hover:bg-panda_light">
             Leaderboard
           </Button>
