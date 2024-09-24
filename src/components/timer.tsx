@@ -1,9 +1,7 @@
 "use client";
 import { FC, useEffect, useState } from "react";
 
-interface TimerProps {}
-
-const Timer: FC<TimerProps> = (props) => {
+const Timer: FC = () => {
   const [minute, setMinute] = useState<number>(14);
   const [second, setSecond] = useState<number>(59);
 

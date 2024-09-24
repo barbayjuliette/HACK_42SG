@@ -27,7 +27,7 @@ const ImageBar: FC<ImageBarProps> = (props) => {
   return (
     <div className="grid grid-cols-4 gap-4">
       {images.map((image) => {
-        return <ImageBarElement {...image} />;
+        return <ImageBarElement key={image.src} {...image} />;
       })}
     </div>
   );

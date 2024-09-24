@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Filter } from "lucide-react";
-import { FC, ReactElement, useState } from "react";
+import { FC, useState } from "react";
 
 interface IconProps {
   icon: JSX.Element;
@@ -43,6 +42,7 @@ const IconsBar: FC<IconsBarProps> = (props) => {
     <div className="flex gap-8 items-center justify-center">
       {icons.map((icon) => (
         <Icon
+          key={icon.title}
           {...icon}
           selected={selected?.title === icon.title}
           onClick={() => onClick(icon)}

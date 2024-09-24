@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { FC, ReactElement } from "react";
+import { FC } from "react";
 
 interface NavbarItemProps {
   icon: JSX.Element;
@@ -32,7 +32,7 @@ const Navbar: FC<NavbarProps> = (props) => {
   return (
     <div className="flex gap-10 h-[100px] items-center justify-center px-8">
       {items.map((item) => (
-        <NavbarItem {...item} />
+        <NavbarItem key={item.title} {...item} />
       ))}
     </div>
   );
