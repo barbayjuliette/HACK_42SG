@@ -2,17 +2,11 @@
 import { FC, useEffect, useState } from "react";
 
 const Timer: FC = () => {
-  const [minute, setMinute] = useState<number>(14);
   const [second, setSecond] = useState<number>(59);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (second == 0) {
-        setMinute(minute - 1);
-        setSecond(59);
-      } else {
-        setSecond(second - 1);
-      }
+      setSecond(second - 1);
     }, 1000);
     return () => clearInterval(interval);
   });
