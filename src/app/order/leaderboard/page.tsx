@@ -34,7 +34,7 @@ export default function LeaderboardPage() {
 
     return (
         <div className="flex flex-col w-full py-2 pb-0 gap-4 bg-panda_bg min-h-screen">
-            <ExitButton href="/order/confirmation" back className="top-8" />
+            <ExitButton href="/order/track" back className="top-8" />
             <div className="flex flex-col gap-2 items-center px-4 py-2 justify-center">
                 <p className="font-bold text-2xl">Leaderboard 👑</p>
                 <div className="flex gap-1 items-center">
