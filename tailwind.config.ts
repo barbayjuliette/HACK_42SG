@@ -15,6 +15,7 @@ const config: Config = {
         panda: "#FF2B85",
         panda_light: "#FFACCF",
         panda_bg: "#FCF4F2",
+        neutral: "#39434D",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
