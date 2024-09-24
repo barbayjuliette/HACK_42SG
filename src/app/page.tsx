@@ -11,6 +11,7 @@ import {
   userLocation,
 } from "@/constants/general";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -40,7 +41,7 @@ export default function Home() {
           <ImageBar images={cuisineImages} />
         </div>
         {/* GIF */}
-        <div className="px-8 py-2 flex-grow">
+        <Link href="/order" className="px-8 py-2 flex-grow">
           <Image
             src="/panda_offer.gif"
             alt="gidasdas"
@@ -50,7 +51,7 @@ export default function Home() {
               borderRadius: 18,
             }}
           />
-        </div>
+        </Link>
         {/* Gather Button */}
         <GatherButton />
       </div>
