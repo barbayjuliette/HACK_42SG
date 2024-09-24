@@ -85,25 +85,25 @@ export default function CartPage() {
         <FoodItem
           src="/japanese.png"
           title="Donburi"
-          description="The juiciest salmon"
+          description="Delicious Don"
           price="$5.00"
         />
         <FoodItem
           src="/korean.png"
-          title="Bimbimbap"
-          description="The bobbiest bimbab"
+          title="Bimbimbap 1"
+          description="One bimbab"
           price="$12.00"
         />
         <FoodItem
           src="/korean.png"
-          title="Cutest Bob"
-          description="The bobbiest bimbab"
+          title="Bimbimbap 2"
+          description="Another bimbab"
           price="$12.00"
         />
         <FoodItem
           src="/korean.png"
-          title="Precious Bibab"
-          description="The bobbiest bimbab"
+          title="Bimbimbap 3"
+          description="One more bimbab"
           price="$12.00"
         />
       </div>
