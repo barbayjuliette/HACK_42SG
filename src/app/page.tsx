@@ -53,7 +53,7 @@ export default function Home() {
           />
         </Link>
         {/* Gather Button */}
-        <GatherButton />
+        <GatherButton href="/gather" />
       </div>
       <Navbar items={navbarItems} />
     </div>
