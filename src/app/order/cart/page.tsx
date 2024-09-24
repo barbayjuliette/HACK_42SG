@@ -135,7 +135,7 @@ export default function CartPage() {
         <div className="flex flex-col gap-3 text-end">
           <p className="text-lg font-bold text-panda">$41.00</p>
           <div className="flex gap-2 items-center justify-end">
-            <p className="text-lg font-bold">4500</p>
+            <p className="text-lg font-bold">1337</p>
             <Image
               src="/cactus.png"
               height={24}
@@ -145,7 +145,7 @@ export default function CartPage() {
           </div>
         </div>
       </div>
-      <Link href="/order/checkout">
+      <Link href="/order/track">
         <TotalButton title="Confirm Order" />
       </Link>
     </div>
