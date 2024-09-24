@@ -16,7 +16,7 @@ You can check the app on [vercel](https://bruh-dxgp.vercel.app/)
 This is the only repository for the project.
 This repository contains the full-stack application.
 
-## Getting Started
+## Running the development environment
 
 First, install all dependencies:
 npm install
@@ -37,7 +37,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Local/server settings and configurations
 
-None
+Not applicable
 
 ## Secrets and environment variables needed for execution
 
