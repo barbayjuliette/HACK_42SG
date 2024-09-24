@@ -1,0 +1,66 @@
+{
+    "name": "Coriander Leaf - Chijmes",
+    "cuisine": "Western",
+    "menu items": [
+        {
+            "name": "Muhamarra & Labneh - Veg",
+            "image": "me1.png",
+            "price": 20.0,
+            "description": "Duo of classic Mediterranean dips comes with soft naan."
+        },
+        {
+            "name": "Watermelon Salad, Mint, Pomegranate - Veg/Gluten free",
+            "image": "water1.png",
+            "price": 18.0,
+            "description": "Turkish White Cheese"
+        },
+        {
+            "name": "Green Mango Salad - Veg/Gluten free",
+            "image": "greenman.png",
+            "price": 17.0,
+            "description": "Mustard Kasundi Dressing, Green Chilli"
+        },
+        {
+            "name": "Chilled Soba Noodles Furikake - Vegan",
+            "image": "coriander.png",
+            "price": 18.0,
+            "description": "Pickled Cucumber, Wakame"
+        },
+        {
+            "name": "Spinach Parcel- Veg",
+            "image": "spinach.png",
+            "price": 19.0,
+            "description": "Spinach with toasted pine nuts, Turkish white cheese and browned butter"
+        },
+        {
+            "name": "Grilled Halloumi - Veg",
+            "image": "halloumi.png",
+            "price": 22.0,
+            "description": "Served with roasted vegetables and a balsamic glaze."
+        },
+        {
+            "name": "Falafel Wrap - Vegan",
+            "image": "falafel.png",
+            "price": 15.0,
+            "description": "Falafel balls wrapped in a soft tortilla with hummus and fresh veggies."
+        },
+        {
+            "name": "Lamb Kofta",
+            "image": "kofta.png",
+            "price": 25.0,
+            "description": "Spiced lamb meatballs served with a tangy yogurt sauce."
+        },
+        {
+            "name": "Chicken Shawarma",
+            "image": "shawarma.png",
+            "price": 23.0,
+            "description": "Marinated chicken served with garlic sauce and pickled vegetables."
+        },
+        {
+            "name": "Baklava - Veg",
+            "image": "baklava.png",
+            "price": 10.0,
+            "description": "Layers of filo pastry filled with chopped nuts and sweetened with honey."
+        }
+    ]
+}
