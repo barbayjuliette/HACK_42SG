@@ -10,7 +10,7 @@ interface AddressProps {
   onToggleNotifications: () => void;
 }
 
-const Address: FC<AddressProps> = ({ address, notificationsEnabled, onToggleNotifications }) => {
+const Address: FC<AddressProps> = ({ address }) => {
     return (
       <div className="flex items-start p-4 border-b border-gray-200">
         <HomeIcon className="w-6 h-6 text-gray-500" />

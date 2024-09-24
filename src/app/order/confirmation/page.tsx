@@ -8,7 +8,6 @@ import { Separator } from "@/components/ui/separator";
 import { restaurantName, userLocation } from "@/constants/general";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { ArrowRight, Bike, CreditCard } from "lucide-react";
-import Link from "next/link";
 import LocationAlert from "@/components/location-alert";
 
 export default function OrderConfirmationPage() {

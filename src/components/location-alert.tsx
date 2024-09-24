@@ -24,7 +24,7 @@ const LocationAlert = () => {
           <SewingPinIcon />
         </div>
         <div className="text-center mb-5">
-          We've detected that you're not in the delivery area.
+          We have detected that you are not in the delivery area.
           <br />
           Continue ordering?
         </div>
