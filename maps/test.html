@@ -2,12 +2,41 @@
 <html>
 <head>
     <title>Map Display</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsjZYYi7gD8YuAFuFrMLBU950pTuneoM"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <style>
-        #mapAtoB, #mapAtoC {
-            height: 400px;
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #mapContainer {
+            display: flex;
+            flex-direction: column; /* Stack maps vertically */
+            width: 100%; /* Full width */
+            max-width: 1200px; /* Max width for larger screens */
+        }
+        .mapWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
             margin-bottom: 20px;
+        }
+        .map {
+            height: 600px; /* Increase height for portrait orientation */
+            width: 100%;
+        }
+        @media (min-width: 600px) {
+            #mapContainer {
+                flex-direction: row; /* Arrange maps side by side on larger screens */
+                justify-content: space-between; /* Space between the maps */
+            }
+            .mapWrapper {
+                width: 32%; /* Adjust width to fit side by side */
+            }
         }
     </style>
 </head>
@@ -27,16 +56,35 @@
     </div>
     <button onclick="calculateDistances()">Calculate Distances</button>
     <div id="results"></div>
-    <div id="mapAtoB"></div>
-    <div id="mapAtoC"></div>
+    
+    <div id="mapContainer"> <!-- Container for the maps -->
+        <div class="mapWrapper">
+            <h3>Origin to A</h3>
+            <div id="mapAtoB" class="map"></div>
+            <div id="distanceAtoB"></div>
+        </div>
+        <div class="mapWrapper">
+            <h3>Origin to B</h3>
+            <div id="mapAtoC" class="map"></div>
+            <div id="distanceAtoC"></div>
+        </div>
+        <div class="mapWrapper">
+            <h3>Origin to A to B</h3>
+            <div id="mapBestRoute" class="map"></div>
+            <div id="distanceBestRoute"></div>
+        </div>
+    </div>
+    
     <div id="distanceSaved"></div> <!-- Added div to display saved distance -->
 
     <script>
         let mapAtoB;
         let mapAtoC;
+        let mapBestRoute;
         let directionsService;
         let directionsRendererAtoB;
         let directionsRendererAtoC;
+        let directionsRendererBestRoute;
 
         function initMap() {
             mapAtoB = new google.maps.Map(document.getElementById('mapAtoB'), {
@@ -47,11 +95,17 @@
                 center: {lat: 1.3521, lng: 103.8198},  // Singapore coordinates
                 zoom: 11
             });
+            mapBestRoute = new google.maps.Map(document.getElementById('mapBestRoute'), {
+                center: {lat: 1.3521, lng: 103.8198},  // Singapore coordinates
+                zoom: 11
+            });
             directionsService = new google.maps.DirectionsService();
             directionsRendererAtoB = new google.maps.DirectionsRenderer();
             directionsRendererAtoC = new google.maps.DirectionsRenderer();
+            directionsRendererBestRoute = new google.maps.DirectionsRenderer();
             directionsRendererAtoB.setMap(mapAtoB);
             directionsRendererAtoC.setMap(mapAtoC);
+            directionsRendererBestRoute.setMap(mapBestRoute);
         }
 
         function calculateDistances() {
@@ -59,11 +113,12 @@
             const destination1 = document.getElementById('destination1').value;
             const destination2 = document.getElementById('destination2').value;
 
-            calculateDistance(origin, destination1, 'Distance to Destination 1: ', directionsRendererAtoB, 'A to B');
-            calculateDistance(origin, destination2, 'Distance to Destination 2: ', directionsRendererAtoC, 'A to C');
+            calculateDistance(origin, destination1, 'Distance to Destination 1: ', directionsRendererAtoB, 'A to B', 'distanceAtoB');
+            calculateDistance(origin, destination2, 'Distance to Destination 2: ', directionsRendererAtoC, 'A to C', 'distanceAtoC');
+            calculateBestRoute(origin, destination1, destination2, 'distanceBestRoute');
         }
 
-        function calculateDistance(origin, destination, label, directionsRenderer, routeLabel) {
+        function calculateDistance(origin, destination, label, directionsRenderer, routeLabel, distanceElementId) {
             const request = {
                 origin: origin,
                 destination: destination,
@@ -74,7 +129,7 @@
                 if (status === 'OK') {
                     const distance = result.routes[0].legs[0].distance.value; // Distance in meters
                     const duration = result.routes[0].legs[0].duration.text;
-                    document.getElementById('results').innerHTML += `<p>${label}${distance} meters (${result.routes[0].legs[0].distance.text}, ${duration})</p>`;
+                    document.getElementById(distanceElementId).innerHTML = `<p>${label}${distance} meters (${result.routes[0].legs[0].distance.text}, ${duration})</p>`;
                     directionsRenderer.setDirections(result);
 
                     // Store distances for calculation
@@ -90,7 +145,30 @@
                         document.getElementById('distanceSaved').innerHTML = `Distance saved: ${savedDistance} meters (${(savedDistance / 1000).toFixed(2)} km)`;
                     }
                 } else {
-                    document.getElementById('results').innerHTML += `<p>${label} Unable to calculate distance</p>`;
+                    document.getElementById(distanceElementId).innerHTML = `<p>${label} Unable to calculate distance</p>`;
+                }
+            });
+        }
+
+        function calculateBestRoute(origin, destination1, destination2, distanceElementId) {
+            const request = {
+                origin: origin,
+                destination: destination2, // End at destination2 (B)
+                waypoints: [
+                    { location: destination1, stopover: true } // Stop at destination1 (A) first
+                ],
+                travelMode: 'DRIVING'
+            };
+
+            directionsService.route(request, function(result, status) {
+                if (status === 'OK') {
+                    const distance = result.routes[0].legs.reduce((total, leg) => total + leg.distance.value, 0); // Total distance in meters
+                    const duration = result.routes[0].legs.reduce((total, leg) => total + leg.duration.value, 0); // Total duration in seconds
+                    const durationText = new Date(duration * 1000).toISOString().substr(11, 8); // Convert duration to HH:MM:SS format
+                    document.getElementById(distanceElementId).innerHTML = `<p>Total Distance: ${distance} meters (${(distance / 1000).toFixed(2)} km), Total Duration: ${durationText}</p>`;
+                    directionsRendererBestRoute.setDirections(result);
+                } else {
+                    document.getElementById(distanceElementId).innerHTML = `<p>Unable to calculate best route</p>`;
                 }
             });
         }
@@ -98,3 +176,4 @@
         window.onload = initMap;
     </script>
 </body>
+</html>
