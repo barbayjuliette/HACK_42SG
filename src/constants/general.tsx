@@ -9,7 +9,8 @@ import {
   User,
 } from "lucide-react";
 
-export const userLocation = "🎓 SUTD, 8 Somapah Rd, Singapore 487372";
+export const userLocation = "🎓 SUTD, 8 Somapah Rd";
+export const restaurantName = "Hubert Restaurant";
 
 export const homepageIcons = [
   { icon: <TicketPercent />, title: "Offers" },

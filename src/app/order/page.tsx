@@ -2,7 +2,6 @@
 
 import FoodpandaNotif from "@/components/foodpanda-notif";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
 import { toast } from "sonner";
 
 export default function OrderPage() {

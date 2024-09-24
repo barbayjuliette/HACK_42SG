@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/navbar";
-import { navbarItems } from "@/constants/general";
 import { Toaster } from "sonner";
 
 const font = Open_Sans({ subsets: ["latin"] });
