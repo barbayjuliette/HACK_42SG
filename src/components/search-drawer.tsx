@@ -32,25 +32,25 @@ const FoodItem: FC<FoodItemProps> = (props) => {
 const items: FoodItemProps[] = [
   {
     title: "Mala Xianguo",
-    description: "Spiciest please sir",
+    description: "Description for Mala",
     src: "/korean.png",
     price: "$5.00",
   },
   {
     title: "Pizza",
-    description: "The spiciest meatball",
+    description: "Description for Pizza",
     src: "/pizza.png",
     price: "$12.00",
   },
   {
     title: "Ramen",
-    description: "The slurpiest noodles",
+    description: "Description for Ramen",
     src: "/japanese.png",
     price: "$50.00",
   },
   {
     title: "Golden Chicken",
-    description: "Breaks the bank",
+    description: "Description for Chicken",
     src: "/singapore.png",
     price: "$150.00",
   },
