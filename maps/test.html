@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Display</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsjZYYi7gD8YuAFuFrMLBU950pTuneoM"></script>
+    <style>
+        #mapAtoB, #mapAtoC {
+            height: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Distance Calculator</h1>
+    <div>
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin" placeholder="Enter origin address">
+    </div>
+    <div>
+        <label for="destination1">Destination 1:</label>
+        <input type="text" id="destination1" placeholder="Enter first destination address">
+    </div>
+    <div>
+        <label for="destination2">Destination 2:</label>
+        <input type="text" id="destination2" placeholder="Enter second destination address">
+    </div>
+    <button onclick="calculateDistances()">Calculate Distances</button>
+    <div id="results"></div>
+    <div id="mapAtoB"></div>
+    <div id="mapAtoC"></div>
+    <div id="distanceSaved"></div> <!-- Added div to display saved distance -->
+
+    <script>
+        let mapAtoB;
+        let mapAtoC;
+        let directionsService;
+        let directionsRendererAtoB;
+        let directionsRendererAtoC;
+
+        function initMap() {
+            mapAtoB = new google.maps.Map(document.getElementById('mapAtoB'), {
+                center: {lat: 1.3521, lng: 103.8198},  // Singapore coordinates
+                zoom: 11
+            });
+            mapAtoC = new google.maps.Map(document.getElementById('mapAtoC'), {
+                center: {lat: 1.3521, lng: 103.8198},  // Singapore coordinates
+                zoom: 11
+            });
+            directionsService = new google.maps.DirectionsService();
+            directionsRendererAtoB = new google.maps.DirectionsRenderer();
+            directionsRendererAtoC = new google.maps.DirectionsRenderer();
+            directionsRendererAtoB.setMap(mapAtoB);
+            directionsRendererAtoC.setMap(mapAtoC);
+        }
+
+        function calculateDistances() {
+            const origin = document.getElementById('origin').value;
+            const destination1 = document.getElementById('destination1').value;
+            const destination2 = document.getElementById('destination2').value;
+
+            calculateDistance(origin, destination1, 'Distance to Destination 1: ', directionsRendererAtoB, 'A to B');
+            calculateDistance(origin, destination2, 'Distance to Destination 2: ', directionsRendererAtoC, 'A to C');
+        }
+
+        function calculateDistance(origin, destination, label, directionsRenderer, routeLabel) {
+            const request = {
+                origin: origin,
+                destination: destination,
+                travelMode: 'DRIVING'
+            };
+
+            directionsService.route(request, function(result, status) {
+                if (status === 'OK') {
+                    const distance = result.routes[0].legs[0].distance.value; // Distance in meters
+                    const duration = result.routes[0].legs[0].duration.text;
+                    document.getElementById('results').innerHTML += `<p>${label}${distance} meters (${result.routes[0].legs[0].distance.text}, ${duration})</p>`;
+                    directionsRenderer.setDirections(result);
+
+                    // Store distances for calculation
+                    if (routeLabel === 'A to B') {
+                        window.distanceAB = distance; // Store distance A to B
+                    } else if (routeLabel === 'A to C') {
+                        window.distanceAC = distance; // Store distance A to C
+                    }
+
+                    // Calculate and display saved distance
+                    if (window.distanceAB && window.distanceAC) {
+                        const savedDistance = (window.distanceAB + window.distanceAC) - Math.min(window.distanceAB, window.distanceAC);
+                        document.getElementById('distanceSaved').innerHTML = `Distance saved: ${savedDistance} meters (${(savedDistance / 1000).toFixed(2)} km)`;
+                    }
+                } else {
+                    document.getElementById('results').innerHTML += `<p>${label} Unable to calculate distance</p>`;
+                }
+            });
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
