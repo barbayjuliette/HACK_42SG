@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CaretDownIcon, QuestionMarkCircledIcon } from "@radix-ui/react-icons";
-import { MapPin, Pin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

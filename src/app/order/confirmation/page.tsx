@@ -1,11 +1,10 @@
 import ExitButton from "@/components/exit-button";
 import Timer from "@/components/timer";
-import TotalButton from "@/components/total-button";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { restaurantName, userLocation } from "@/constants/general";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
-import { ArrowRight, ArrowRightCircle, Bike, CreditCard } from "lucide-react";
+import { ArrowRight, Bike, CreditCard } from "lucide-react";
 import Link from "next/link";
 
 export default function OrderConfirmationPage() {
