@@ -27,8 +27,8 @@ export const cuisineImages = [
 ];
 
 export const navbarItems = [
-  { icon: <Drumstick />, title: "Food", selected: true },
-  { icon: <Carrot />, title: "Grocery" },
-  { icon: <Search />, title: "Search" },
-  { icon: <User />, title: "Account" },
+  { icon: <Drumstick />, title: "Food", href: "/", selected: true },
+  { icon: <Carrot />, title: "Grocery", href: "/" },
+  { icon: <Search />, title: "Search", href: "/" },
+  { icon: <User />, title: "Account", href: "/profile" },
 ];
