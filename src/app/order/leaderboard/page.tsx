@@ -1,10 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import ExitButton from "@/components/exit-button";
-import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { useState, useEffect } from "react";
 import InfoIcon from "@/components/InfoIcon";
 

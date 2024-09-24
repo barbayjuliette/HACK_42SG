@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Input } from "./ui/input";
 import Image from "next/image";
 import Timer from "./timer";
-import { Share, StarIcon, Clock } from "lucide-react";
+import { StarIcon, Clock } from "lucide-react";
 
 interface FoodItemProps {
   title: string;
