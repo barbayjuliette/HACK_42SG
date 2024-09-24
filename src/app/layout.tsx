@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import { navbarItems } from "@/constants/general";
+import { Toaster } from "sonner";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <div className="flex flex-grow">{children}</div>
         </div>
+        <Toaster position="top-center" />
       </body>
     </html>
   );
