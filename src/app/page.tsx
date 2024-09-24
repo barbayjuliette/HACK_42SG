@@ -21,7 +21,9 @@ export default function Home() {
         <div
           className={`h-[133px] bg-panda px-8 py-4 pt-2 flex flex-col gap-4 justify-center w-full`}
         >
-          <p className="text-white">{userLocation}</p>
+          <Link href="/addresses">
+            <p className="text-white">{userLocation}</p>
+          </Link>
           <Input
             className="w-full bg-white border-none rounded-xl"
             placeholder="Search"
