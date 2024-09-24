@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from 'react';
 import ExitButton from "@/components/exit-button";
 import Timer from "@/components/timer";
 import { Button } from "@/components/ui/button";
@@ -6,10 +9,18 @@ import { restaurantName, userLocation } from "@/constants/general";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { ArrowRight, Bike, CreditCard } from "lucide-react";
 import Link from "next/link";
+import LocationAlert from "@/components/location-alert";
 
 export default function OrderConfirmationPage() {
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowAlert(true);
+  };
+
   return (
     <div className="flex flex-col gap-8 bg-panda_bg w-full items-center">
+      {showAlert && <LocationAlert />}
       <ExitButton />
       <div className="p-12 bg-restaurant bg-cover bg-opacity-20 w-full items-center justify-center shadow-lg">
         <div className="p-4 flex flex-col gap-6 rounded-lg bg-panda_bg items-center justify-center opacity-90">
@@ -45,11 +56,9 @@ export default function OrderConfirmationPage() {
           </div>
         </div>
       </div>
-      <Link href="/order/selection">
-        <Button className="h-[86px] w-[340px] flex items-center justify-center rounded-xl bg-panda">
-          <ArrowRight size={48} />
-        </Button>
-      </Link>
+      <Button className="h-[86px] w-[340px] flex items-center justify-center rounded-xl bg-panda" onClick={handleButtonClick}>
+        <ArrowRight size={48} />
+      </Button>
     </div>
   );
 }
