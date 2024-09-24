@@ -22,7 +22,6 @@ export default function RootLayout({
       <body className={cn(font.className)}>
         <div className="flex flex-col min-h-screen">
           <div className="flex flex-grow">{children}</div>
-          <Navbar items={navbarItems} />
         </div>
       </body>
     </html>
