@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 
 interface InfoIconProps {
